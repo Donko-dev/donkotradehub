@@ -1,0 +1,17 @@
+# ---- Secrets : jamais dans le site public ----
+.env
+.env.*
+*.env
+*_secrets*
+*.key
+config.local.js
+settings.local.json
+
+# ---- Fichiers générés ----
+node_modules/
+*.zip
+*.log
+
+# ---- Système ----
+.DS_Store
+Thumbs.db

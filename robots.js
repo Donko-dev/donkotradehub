@@ -1,0 +1,23 @@
+/* DONKO TRADE HUB : les 4 robots, utilisés par le tableau de bord. Textes FR / EN / DE. Aucun résultat n'est promis. */
+window.DONKO_ROBOTS = [
+  { id: "SYNTIX", name: "DONKO SYNTIX", image: "logo-donko-syntix.jpg",
+    market: { fr: "Indices SyntX (Weltrade)", en: "SyntX indices (Weltrade)", de: "SyntX-Indizes (Weltrade)" },
+    brokerScope: { fr: "Weltrade uniquement", en: "Weltrade only", de: "nur Weltrade" },
+    brokerNote: { fr: "Compte SyntX Weltrade uniquement.", en: "SyntX Weltrade account only.", de: "Nur SyntX-Weltrade-Konto." },
+    status: { fr: "Démo en préparation. Non validé par backtest.", en: "Demo in preparation. Not validated by backtest.", de: "Demo in Vorbereitung. Nicht durch Backtest validiert." } },
+  { id: "GOLD", name: "DONKO GOLD", image: "logo-donko-gold.jpg",
+    market: { fr: "Or (un seul actif)", en: "Gold (one asset)", de: "Gold (ein Basiswert)" },
+    brokerScope: { fr: "Tous brokers compatibles or", en: "All gold-compatible brokers", de: "Alle Gold-kompatiblen Broker" },
+    brokerNote: { fr: "Le nom de l'or dépend du broker.", en: "The name of gold depends on the broker.", de: "Der Name von Gold hängt vom Broker ab." },
+    status: { fr: "Développé. Non validé par backtest.", en: "Developed. Not validated by backtest.", de: "Entwickelt. Nicht durch Backtest validiert." } },
+  { id: "FOREX", name: "DONKO FOREX", image: "logo-donko-forex.jpg",
+    market: { fr: "Forex (15 paires)", en: "Forex (15 pairs)", de: "Forex (15 Paare)" },
+    brokerScope: { fr: "Tous brokers compatibles Forex", en: "All Forex-compatible brokers", de: "Alle Forex-kompatiblen Broker" },
+    brokerNote: { fr: "Les noms des paires dépendent du broker.", en: "Pair names depend on the broker.", de: "Die Paarnamen hängen vom Broker ab." },
+    status: { fr: "En développement. Pas encore codé.", en: "In development. Not coded yet.", de: "In Entwicklung. Noch nicht programmiert." } },
+  { id: "CRYPTO", name: "DONKO CRYPTOCURRENCY", image: "logo-donko-crypto.jpg",
+    market: { fr: "Cryptomonnaies (15 actifs)", en: "Cryptocurrencies (15 assets)", de: "Kryptowährungen (15 Basiswerte)" },
+    brokerScope: { fr: "Tous brokers compatibles cryptomonnaies", en: "All crypto-compatible brokers", de: "Alle Krypto-kompatiblen Broker" },
+    brokerNote: { fr: "Le nom du Bitcoin dépend du broker.", en: "The name of Bitcoin depends on the broker.", de: "Der Name von Bitcoin hängt vom Broker ab." },
+    status: { fr: "En développement. Pas encore codé.", en: "In development. Not coded yet.", de: "In Entwicklung. Noch nicht programmiert." } },
+];

@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#07080b">
+<meta name="description" content="DONKO TRADE HUB : 4 robots de trading automatiques (SyntX, or, Forex, cryptomonnaies). Méthode écrite, limites publiées. Aucun gain garanti.">
+<link rel="canonical" href="https://donko-dev.github.io/donkoquantsyntix/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DONKO TRADE HUB">
+<meta property="og:description" content="4 robots de trading automatiques. Méthode écrite, limites publiées. Aucun gain garanti.">
+<meta property="og:url" content="https://donko-dev.github.io/donkoquantsyntix/">
+<meta property="og:image" content="https://donko-dev.github.io/donkoquantsyntix/logo-donko-trade-hub.png">
+<title>DONKO TRADE HUB · Robots de trading</title>
+<link rel="icon" href="favicon-64.png" sizes="64x64">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="site.css">
+</head>
+<body class="vitrine">
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="header-row">
+      <a class="brand" href="#accueil" aria-label="DONKO TRADE HUB">
+        <img src="logo-donko-trade-hub.png" alt="DONKO TRADE HUB" width="44" height="44">
+        <span class="brand-name">DONKO TRADE HUB</span>
+      </a>
+      <div class="header-tools">
+        <button id="btn-theme" class="icon-btn" type="button" aria-label="Thème" title="Thème">☀</button>
+        <button id="btn-lang" class="icon-btn flag" type="button" aria-label="Langue" title="Langue">🇫🇷</button>
+        <button id="btn-nav" class="icon-btn nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">☰</button>
+      </div>
+    </div>
+    <nav class="main-nav" id="main-nav" aria-label="Navigation">
+      <ul>
+        <li><a href="#accueil" data-i18n="nav_home">Accueil</a></li>
+        <li><a href="#robots" data-i18n="nav_robots">Les 4 robots</a></li>
+        <li><a href="#strategies" data-i18n="nav_strategies">Stratégies</a></li>
+        <li><a href="#spreads" data-i18n="nav_spreads">Spreads &amp; annonces</a></li>
+        <li><a href="#brokers" data-i18n="nav_brokers">Brokers</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+        <li><a href="dashboard.html" data-i18n="nav_dashboard">Tableau de bord</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="disclaimer-bar" data-i18n="disclaimer">Le trading comporte un risque de perte. Les performances passées ne garantissent pas les résultats futurs.</div>
+
+<main>
+
+  <section id="accueil" class="hero">
+    <div class="wrap hero-inner">
+      <img class="hero-logo" src="logo-donko-trade-hub.png" alt="DONKO TRADE HUB" width="220" height="220">
+      <h1>DONKO TRADE HUB</h1>
+      <p class="lead" data-i18n="hero_lead">4 robots de trading automatiques, 4 marchés : indices synthétiques SyntX, or, Forex et cryptomonnaies.</p>
+      <div class="btn-row hero-btns">
+        <a class="btn" href="#robots" data-i18n="btn_robots">Voir les 4 robots</a>
+        <a class="btn ghost" href="#strategies" data-i18n="btn_strategies">Les stratégies</a>
+        <a class="btn ghost" href="dashboard.html" data-i18n="btn_dashboard">Tableau de bord</a>
+      </div>
+      <p class="small muted hero-note" data-i18n="hero_note">Aucun gain n'est garanti. Les stratégies ne sont pas encore validées par backtest sur données réelles.</p>
+    </div>
+  </section>
+
+  <section id="robots">
+    <div class="wrap">
+      <h2 data-i18n="robots_title">Les 4 robots</h2>
+      <p data-i18n="robots_intro">Chaque robot a son marché, ses règles et ses limites. Aucun ne dépend d'un autre.</p>
+      <div class="robot-grid">
+        <a class="robot-tile" href="#robot-syntix" style="--c:#5aa9e6">
+          <img src="logo-donko-syntix.jpg" alt="DONKO SYNTIX" loading="lazy">
+          <strong>DONKO SYNTIX</strong>
+          <span data-i18n="tile_syntix">Indices SyntX · Weltrade uniquement</span>
+        </a>
+        <a class="robot-tile priority" href="#robot-gold" style="--c:#e8c468">
+          <span class="badge" data-i18n="badge_priority">PRIORITAIRE · ACTIF REFUGE</span>
+          <img src="logo-donko-gold.jpg" alt="DONKO GOLD" loading="lazy">
+          <strong>DONKO GOLD</strong>
+          <span data-i18n="tile_gold">Or · tous brokers compatibles</span>
+        </a>
+        <a class="robot-tile" href="#robot-forex" style="--c:#2fb170">
+          <img src="logo-donko-forex.jpg" alt="DONKO FOREX" loading="lazy">
+          <strong>DONKO FOREX</strong>
+          <span data-i18n="tile_forex">Forex · tous brokers compatibles</span>
+        </a>
+        <a class="robot-tile" href="#robot-crypto" style="--c:#9b7bff">
+          <img src="logo-donko-crypto.jpg" alt="DONKO CRYPTOCURRENCY" loading="lazy">
+          <strong>DONKO CRYPTOCURRENCY</strong>
+          <span data-i18n="tile_crypto">Cryptomonnaies, dont Bitcoin · tous brokers compatibles</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="robot-syntix" class="robot-section" style="--c:#5aa9e6">
+    <div class="wrap robot-layout">
+      <img class="robot-logo" src="logo-donko-syntix.jpg" alt="DONKO SYNTIX" loading="lazy">
+      <div>
+        <h2>DONKO SYNTIX</h2>
+        <p class="robot-market" data-i18n="syx_market">Marché : indices synthétiques SyntX (générés par algorithme), disponibles 24 h/24, 7 j/7.</p>
+        <h3 data-i18n="h_brokers_compat">Brokers compatibles</h3>
+        <p data-i18n="syx_brokers">Weltrade uniquement, sur un compte SyntX.</p>
+        <p><a class="btn" href="https://www.weltrade.com" target="_blank" rel="noopener" data-i18n="btn_open_weltrade">Ouvrir Weltrade</a></p>
+        <h3 data-i18n="h_assets">Actifs</h3>
+        <p data-i18n="syx_assets">15 actifs activés : FX Vol 20, 40, 60 · SFX Vol 20, 40 · PainX 400, 600, 800, 999, 1200 · GainX 400, 600, 800, 999, 1200.</p>
+        <p class="small muted" data-i18n="syx_names">Les noms exacts s'affichent dans MT5 chez Weltrade.</p>
+        <h3 data-i18n="h_strategy">Stratégie prioritaire</h3>
+        <p data-i18n="syx_strategy">Quatre modes codés : long terme (D1), swing (H1), day trading (M5, fermé avant 21 h UTC) et scalping (M1). Un seul ordre par indice, budget de risque partagé à 1 %. Non validés par backtest.</p>
+        <p class="status" data-i18n="syx_status">Statut : modes codés, démo en préparation. Non validé par backtest.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="robot-gold" class="robot-section" style="--c:#e8c468">
+    <div class="wrap robot-layout">
+      <img class="robot-logo" src="logo-donko-gold.jpg" alt="DONKO GOLD" loading="lazy">
+      <div>
+        <span class="badge" data-i18n="badge_priority">PRIORITAIRE · ACTIF REFUGE</span>
+        <h2>DONKO GOLD</h2>
+        <p class="robot-market" data-i18n="gold_market">Marché : or uniquement, un seul actif. L'or est notre actif refuge : c'est pour cela que ce robot est mis en avant.</p>
+        <h3 data-i18n="h_brokers_compat">Brokers compatibles</h3>
+        <ul class="broker-list">
+          <li><a href="https://www.exness.com" target="_blank" rel="noopener">Exness</a></li>
+          <li><a href="https://www.xm.com" target="_blank" rel="noopener">XM Global</a></li>
+          <li><a href="https://www.icmarkets.com" target="_blank" rel="noopener">IC Markets</a></li>
+          <li><a href="https://www.pepperstone.com" target="_blank" rel="noopener">Pepperstone</a></li>
+          <li><a href="https://www.fpmarkets.com" target="_blank" rel="noopener">FP Markets</a></li>
+        </ul>
+        <h3 data-i18n="h_symbol">Symbole</h3>
+        <p data-i18n="gold_symbol">Le nom de l'or change selon le broker (par exemple XAUUSD, GOLD, XAU/USD). Vérifie-le dans ton MT4 ou MT5.</p>
+        <h3 data-i18n="h_strategy">Stratégie prioritaire</h3>
+        <p data-i18n="gold_strategy">Day trading pendant la session américaine. Swing prévu, non codé.</p>
+        <p class="status" data-i18n="gold_status">Statut : développé. Non validé par backtest.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="robot-forex" class="robot-section" style="--c:#2fb170">
+    <div class="wrap robot-layout">
+      <img class="robot-logo" src="logo-donko-forex.jpg" alt="DONKO FOREX" loading="lazy">
+      <div>
+        <h2>DONKO FOREX</h2>
+        <p class="robot-market" data-i18n="fx_market">Marché : paires de devises (Forex), les plus échangées et les plus connues.</p>
+        <h3 data-i18n="h_brokers_compat">Brokers compatibles</h3>
+        <ul class="broker-list">
+          <li><a href="https://www.exness.com" target="_blank" rel="noopener">Exness</a></li>
+          <li><a href="https://www.xm.com" target="_blank" rel="noopener">XM Global</a></li>
+          <li><a href="https://www.icmarkets.com" target="_blank" rel="noopener">IC Markets</a></li>
+          <li><a href="https://www.pepperstone.com" target="_blank" rel="noopener">Pepperstone</a></li>
+          <li><a href="https://www.tickmill.com" target="_blank" rel="noopener">Tickmill</a></li>
+          <li><a href="https://www.vantagemarkets.com" target="_blank" rel="noopener">Vantage</a></li>
+        </ul>
+        <h3 data-i18n="h_symbol">Symboles</h3>
+        <p data-i18n="fx_symbol">Les noms des paires changent selon le broker. Vérifie-les dans ton MT4 ou MT5.</p>
+        <h3 data-i18n="h_assets">Actifs</h3>
+        <p>EUR/USD, USD/JPY, GBP/USD, AUD/USD, USD/CAD, USD/CHF, NZD/USD, EUR/JPY, GBP/JPY, EUR/GBP, EUR/CHF, AUD/JPY, EUR/AUD, GBP/AUD, EUR/CAD.</p>
+        <p class="small muted" data-i18n="fx_assets_note">Choix : les paires les plus échangées au monde selon l'enquête 2025 de la Banque des règlements internationaux (BRI), en retirant les paires souvent non proposées aux particuliers (comme USD/CNY).</p>
+        <h3 data-i18n="h_strategy">Stratégie prioritaire</h3>
+        <p data-i18n="fx_strategy">Day trading et swing : prévus, non codés.</p>
+        <p class="status" data-i18n="fx_status">Statut : en développement. Pas encore codé.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="robot-crypto" class="robot-section" style="--c:#9b7bff">
+    <div class="wrap robot-layout">
+      <img class="robot-logo" src="logo-donko-crypto.jpg" alt="DONKO CRYPTOCURRENCY" loading="lazy">
+      <div>
+        <h2>DONKO CRYPTOCURRENCY</h2>
+        <p class="robot-market" data-i18n="cr_market">Marché : cryptomonnaies, dont le Bitcoin. Le marché tourne 24 h/24, 7 j/7.</p>
+        <h3 data-i18n="h_brokers_compat">Brokers compatibles</h3>
+        <ul class="broker-list">
+          <li><a href="https://www.exness.com" target="_blank" rel="noopener">Exness</a></li>
+          <li><a href="https://www.xm.com" target="_blank" rel="noopener">XM Global</a></li>
+          <li><a href="https://www.icmarkets.com" target="_blank" rel="noopener">IC Markets</a></li>
+          <li><a href="https://www.pepperstone.com" target="_blank" rel="noopener">Pepperstone</a></li>
+          <li><a href="https://www.fpmarkets.com" target="_blank" rel="noopener">FP Markets</a></li>
+        </ul>
+        <h3 data-i18n="h_symbol">Symboles</h3>
+        <p data-i18n="cr_symbol">Le Bitcoin s'écrit par exemple BTCUSD ou BTC/USD selon le broker. Vérifie le nom exact dans ton MT4 ou MT5.</p>
+        <h3 data-i18n="h_assets">Actifs</h3>
+        <p>BTC, ETH, BNB, XRP, SOL, ADA, DOGE, TRX, LINK, AVAX, DOT, LTC, BCH, XLM, ATOM.</p>
+        <p class="small muted" data-i18n="cr_assets_note">Choix : les cryptomonnaies de plus forte capitalisation, hors stablecoins. Leur disponibilité dépend du broker.</p>
+        <h3 data-i18n="h_strategy">Stratégie prioritaire</h3>
+        <p data-i18n="cr_strategy">Swing et long terme : prévus, non codés.</p>
+        <p class="status" data-i18n="cr_status">Statut : en développement. Pas encore codé.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="strategies">
+    <div class="wrap">
+      <h2 data-i18n="strat_title">Les 4 stratégies</h2>
+      <p data-i18n="strat_intro">Chaque robot choisit une stratégie selon son marché. Une stratégie non codée est indiquée comme telle.</p>
+      <div class="strategy-grid">
+        <article class="card strategy">
+          <h3 data-i18n="s1_name">Scalping</h3>
+          <p data-i18n="s1_desc">Trades très courts, petits gains rapides, beaucoup de trades. Le spread pèse lourd sur chaque trade.</p>
+          <ul>
+            <li><strong data-i18n="l_duration">Durée :</strong> <span data-i18n="s1_dur">de quelques minutes à une heure</span></li>
+            <li><strong data-i18n="l_risk">Risque :</strong> <span data-i18n="s1_risk">élevé (coûts et fréquence)</span></li>
+            <li><strong data-i18n="l_when">Trade quand :</strong> <span data-i18n="s1_when">le prix s'écarte fortement de sa moyenne, spread serré</span></li>
+            <li><strong data-i18n="l_avoid">Évite :</strong> <span data-i18n="s1_avoid">les annonces, les marchés trop calmes</span></li>
+          </ul>
+        </article>
+        <article class="card strategy">
+          <h3 data-i18n="s2_name">Day trading</h3>
+          <p data-i18n="s2_desc">Positions ouvertes et fermées dans la journée. Aucune position n'est gardée la nuit.</p>
+          <ul>
+            <li><strong data-i18n="l_duration">Durée :</strong> <span data-i18n="s2_dur">quelques heures</span></li>
+            <li><strong data-i18n="l_risk">Risque :</strong> <span data-i18n="s2_risk">moyen</span></li>
+            <li><strong data-i18n="l_when">Trade quand :</strong> <span data-i18n="s2_when">pendant la session de marché choisie</span></li>
+            <li><strong data-i18n="l_avoid">Évite :</strong> <span data-i18n="s2_avoid">les fins de journée et les annonces (selon le robot)</span></li>
+          </ul>
+        </article>
+        <article class="card strategy">
+          <h3 data-i18n="s3_name">Swing</h3>
+          <p data-i18n="s3_desc">Positions tenues plusieurs jours pour suivre une tendance. Peu de trades, mais chacun dure plus longtemps.</p>
+          <ul>
+            <li><strong data-i18n="l_duration">Durée :</strong> <span data-i18n="s3_dur">de un à plusieurs jours</span></li>
+            <li><strong data-i18n="l_risk">Risque :</strong> <span data-i18n="s3_risk">moyen à élevé (écarts de nuit, frais de nuit)</span></li>
+            <li><strong data-i18n="l_when">Trade quand :</strong> <span data-i18n="s3_when">une tendance se confirme sur les grandes unités de temps</span></li>
+            <li><strong data-i18n="l_avoid">Évite :</strong> <span data-i18n="s3_avoid">les marchés sans tendance</span></li>
+          </ul>
+        </article>
+        <article class="card strategy">
+          <h3 data-i18n="s4_name">Position / long terme</h3>
+          <p data-i18n="s4_desc">Positions tenues des semaines ou des mois. Très peu de trades.</p>
+          <ul>
+            <li><strong data-i18n="l_duration">Durée :</strong> <span data-i18n="s4_dur">plusieurs semaines à plusieurs mois</span></li>
+            <li><strong data-i18n="l_risk">Risque :</strong> <span data-i18n="s4_risk">élevé (grandes variations, frais de financement)</span></li>
+            <li><strong data-i18n="l_when">Trade quand :</strong> <span data-i18n="s4_when">un changement de tendance de fond est confirmé</span></li>
+            <li><strong data-i18n="l_avoid">Évite :</strong> <span data-i18n="s4_avoid">les périodes de forte incertitude</span></li>
+          </ul>
+        </article>
+      </div>
+      <p class="small muted" data-i18n="strat_note">Aucune de ces stratégies n'est validée par backtest sur données réelles à ce jour.</p>
+    </div>
+  </section>
+
+  <section id="spreads">
+    <div class="wrap">
+      <h2 data-i18n="sp_title">Spreads et annonces</h2>
+      <div class="card">
+        <h3 data-i18n="sp_q">C'est quoi le spread ?</h3>
+        <p data-i18n="sp_def">Le spread, c'est l'écart entre le prix d'achat et le prix de vente. Plus il est serré, moins chaque trade te coûte.</p>
+        <p class="example"><strong data-i18n="sp_ex_label">Exemple (chiffres fictifs) :</strong> <span data-i18n="sp_ex">achat à 1,1001 et vente à 1,1000. Le spread est de 0,0001, soit 1 pip.</span></p>
+      </div>
+      <div class="card" style="margin-top:16px;">
+        <h3 data-i18n="an_q">NFP, IPC, FOMC ?</h3>
+        <p><strong data-i18n="an_lead">Certaines stratégies évitent les annonces, d'autres les exploitent !</strong></p>
+        <ul>
+          <li><strong>NFP :</strong> <span data-i18n="an_nfp">emploi aux États-Unis, publié chaque premier vendredi du mois.</span></li>
+          <li><strong>IPC :</strong> <span data-i18n="an_ipc">indice des prix à la consommation, c'est l'inflation.</span></li>
+          <li><strong>FOMC :</strong> <span data-i18n="an_fomc">décision de la Réserve fédérale américaine sur les taux.</span></li>
+        </ul>
+        <p data-i18n="an_text">Pendant ces annonces, le prix peut bouger brutalement. Le robot peut alors se mettre en pause ou réduire le risque. Aujourd'hui, seul DONKO GOLD applique cette pause ; les autres robots ne l'appliquent pas encore.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="brokers">
+    <div class="wrap">
+      <h2 data-i18n="br_title">Brokers et liens</h2>
+      <p data-i18n="br_intro">Liens simples vers les sites des brokers, sans parrainage. Chaque robot n'affiche que les brokers qui lui correspondent (voir ci-dessus).</p>
+      <div class="broker-grid">
+        <a class="btn ghost" href="https://www.weltrade.com" target="_blank" rel="noopener">Weltrade (SyntX)</a>
+        <a class="btn ghost" href="https://www.exness.com" target="_blank" rel="noopener">Exness</a>
+        <a class="btn ghost" href="https://www.xm.com" target="_blank" rel="noopener">XM Global</a>
+        <a class="btn ghost" href="https://www.icmarkets.com" target="_blank" rel="noopener">IC Markets</a>
+        <a class="btn ghost" href="https://www.pepperstone.com" target="_blank" rel="noopener">Pepperstone</a>
+        <a class="btn ghost" href="https://www.fpmarkets.com" target="_blank" rel="noopener">FP Markets</a>
+        <a class="btn ghost" href="https://www.tickmill.com" target="_blank" rel="noopener">Tickmill</a>
+        <a class="btn ghost" href="https://www.vantagemarkets.com" target="_blank" rel="noopener">Vantage</a>
+      </div>
+      <h3 style="margin-top:24px;" data-i18n="pf_title">Prop firms</h3>
+      <div class="broker-grid">
+        <a class="btn ghost" href="https://ftmo.com" target="_blank" rel="noopener">FTMO</a>
+        <a class="btn ghost" href="https://the5ers.com" target="_blank" rel="noopener">The5ers</a>
+      </div>
+      <p class="small muted" data-i18n="br_note">Vérifie les règles d'utilisation de chaque broker ou prop firm avant d'utiliser un robot : tout broker ne l'accepte pas. Ce site ne garantit pas la compatibilité d'un broker.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2 data-i18n="ct_title">Contact</h2>
+      <p><a href="mailto:empiredonko@gmail.com">empiredonko@gmail.com</a></p>
+      <p><a class="btn ghost" href="https://donko-dev.github.io/empirecodehub/" target="_blank" rel="noopener" data-i18n="btn_empire">Découvrir EMPIRE CODE HUB</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <img class="footer-logo" src="logo-donko-trade-hub.png" alt="DONKO TRADE HUB" width="72" height="72">
+    <p><strong>DONKO TRADE HUB</strong></p>
+    <p data-i18n="footer_risk">Le trading comporte un risque de perte en capital. Les performances passées ne garantissent pas les résultats futurs. Aucun gain n'est garanti.</p>
+    <p class="small">© EMPIRE CODE · DONKO TRADE HUB</p>
+  </div>
+</footer>
+
+<script src="vitrine.js"></script>
+</body>
+</html>
