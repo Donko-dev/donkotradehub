@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://donko-dev.github.io/donkoquantsyntix/sitemap.xml
+Sitemap: https://donko-dev.github.io/donkotradehub/sitemap.xml

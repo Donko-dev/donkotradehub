@@ -144,20 +144,20 @@
   function setLang(l) {
     if (LANGS.indexOf(l) === -1) return;
     lang = l;
-    try { localStorage.setItem("syntix_lang", l); } catch (e) { /* */ }
+    try { localStorage.setItem("thub_lang", l); } catch (e) { /* */ }
     apply();
   }
 
   function setTheme(t) {
     root.setAttribute("data-theme", t);
-    try { localStorage.setItem("syntix_theme", t); } catch (e) { /* */ }
+    try { localStorage.setItem("thub_theme", t); } catch (e) { /* */ }
     btnTheme.textContent = t === "dark" ? "☀" : "🌙";
     var meta = document.querySelector('meta[name="theme-color"]');
     if (meta) meta.setAttribute("content", t === "light" ? "#fbf7ec" : "#07080b");
   }
 
   var savedLang = null, savedTheme = null;
-  try { savedLang = localStorage.getItem("syntix_lang"); savedTheme = localStorage.getItem("syntix_theme"); } catch (e) { /* */ }
+  try { savedLang = localStorage.getItem("thub_lang"); savedTheme = localStorage.getItem("thub_theme"); } catch (e) { /* */ }
   setTheme(savedTheme === "light" ? "light" : "dark");
   setLang(LANGS.indexOf(savedLang) !== -1 ? savedLang : "fr");
 

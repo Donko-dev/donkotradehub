@@ -14,11 +14,11 @@
   var T = window.SYNTIX_I18N;
   var LOCALE = { fr: "fr-FR", en: "en-GB", de: "de-DE" };
   var FLAG = { fr: "🇫🇷", en: "🇬🇧", de: "🇩🇪" };
-  var KEY = { lang: "syntix_lang", theme: "syntix_theme", ccy: "syntix_ccy", rate: "syntix_rate_eur",
-              rateDate: "syntix_rate_date", url: "syntix_api_url", token: "syntix_api_token",
-              seen: "syntix_seen_events", favs: "syntix_favs", priv: "syntix_private",
-              lock: "syntix_lock", hiddenAt: "syntix_hidden_at" };
-  var ROBOT_KEY = "syntix_robot";
+  var KEY = { lang: "thub_lang", theme: "thub_theme", ccy: "thub_ccy", rate: "thub_rate_eur",
+              rateDate: "thub_rate_date", url: "thub_api_url", token: "thub_api_token",
+              seen: "thub_seen_events", favs: "thub_favs", priv: "thub_private",
+              lock: "thub_lock", hiddenAt: "thub_hidden_at" };
+  var ROBOT_KEY = "thub_robot";
   var POLL_MS = 30000;
   var XOF_PER_EUR = 655.957;
   var RATE_URL = "https://api.frankfurter.dev/v1/latest?base=USD&symbols=EUR";
@@ -368,6 +368,7 @@
     $("acc-img").setAttribute("src", r.image);
     $("acc-img").setAttribute("alt", r.name);
     $("robot-title").textContent = r.name + " · " + rt(r, "market");
+    renderIndices();
     document.querySelectorAll("#robot-tabs [data-robot]").forEach(function (b) {
       var on = b.getAttribute("data-robot") === state.robot;
       b.classList.toggle("active", on);
@@ -635,16 +636,18 @@
       .catch(function () { /* aucun backtest publié : le message par défaut reste affiché */ });
   }
 
-  /* ---------- Indices : actifs par défaut et favoris ---------- */
+  /* ---------- Actifs du robot choisi et favoris (propres à chaque robot) ---------- */
+  function favKey(id) { return KEY.favs + ":" + (id || state.robot); }
   function favs() {
-    var raw = load(KEY.favs);
-    if (raw === null) return DEFAULT_FAVS.slice();
+    var r = robotById(state.robot);
+    var raw = load(favKey());
+    if (raw === null) return (r.defaultFavs || []).slice();
     try { var v = JSON.parse(raw); return Array.isArray(v) ? v : []; } catch (e) { return []; }
   }
   function toggleFav(name) {
     var list = favs(), i = list.indexOf(name);
     if (i === -1) list.push(name); else list.splice(i, 1);
-    store(KEY.favs, JSON.stringify(list));
+    store(favKey(), JSON.stringify(list));
     renderIndices();
   }
   function indexRow(name) {
@@ -658,14 +661,19 @@
     row.appendChild(label); row.appendChild(star); return row;
   }
   function renderIndices() {
+    var r = robotById(state.robot);
     var d = $("defaults"), f = $("favs");
     if (!d || !f) return;
     d.textContent = "";
-    DEFAULT_INDICES.forEach(function (n) { d.appendChild(indexRow(n)); });
+    (r.assets || []).forEach(function (n) { d.appendChild(indexRow(n)); });
     f.textContent = "";
     var list = favs();
-    if (!list.length) { f.textContent = t("favs_none"); return; }
-    list.forEach(function (n) { f.appendChild(indexRow(n)); });
+    if (!list.length) f.textContent = t("favs_none");
+    else list.forEach(function (n) { f.appendChild(indexRow(n)); });
+    var fam = $("fam-block");
+    if (fam) fam.classList.toggle("hidden", r.id !== "SYNTIX");
+    var note = $("defaults-note");
+    if (note) note.textContent = rt(r, "assetsNote");
   }
 
   /* ---------- Alertes ---------- */

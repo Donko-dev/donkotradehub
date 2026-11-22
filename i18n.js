@@ -416,3 +416,12 @@ var V5 = {
         risk_live: "ECHT", risk_sim: "SIMULATION" },
 };
 for (var lv5 in V5) { Object.assign(window.SYNTIX_I18N[lv5], V5[lv5]); }
+
+
+/* Actifs : le titre ne parle plus seulement de SyntX. */
+var V6 = {
+  fr: { indices_title: "Actifs du robot", indices_intro: "Les actifs ou paires du robot choisi, avec leurs favoris. Chaque robot a sa propre liste.", defaults_title: "Actifs activés" },
+  en: { indices_title: "Robot assets", indices_intro: "The assets or pairs of the selected robot, with its favourites. Each robot has its own list.", defaults_title: "Enabled assets" },
+  de: { indices_title: "Basiswerte des Roboters", indices_intro: "Die Basiswerte oder Paare des gewählten Roboters, mit seinen Favoriten. Jeder Roboter hat seine eigene Liste.", defaults_title: "Aktivierte Basiswerte" },
+};
+for (var lv6 in V6) { Object.assign(window.SYNTIX_I18N[lv6], V6[lv6]); }
